@@ -1,0 +1,45 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans&subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import '~bootstrap-select/sass/bootstrap-select';
+
+@import '~dropzone/dist/min/dropzone.min';
+
+@import '~@fortawesome/fontawesome-free/scss/fa-brands';
+@import '~@fortawesome/fontawesome-free/scss/fa-regular';
+@import '~@fortawesome/fontawesome-free/scss/fa-solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/v4-shims';
+
+//style applied to all pages
+@import 'general';
+
+//style for ProfileComponent
+@import 'profile';
+
+//for TabsComponent
+@import 'tabs';
+
+//for ChatComponent
+@import 'chat';
+
+//for RoomsComponent
+@import 'rooms';
+
+//for RegisterComponent
+@import 'register';
+
+//for CreateRoomComponent
+@import 'create-room';
+
+//navbar
+@import 'navbar';
+
+//footer;
+@import 'footer';

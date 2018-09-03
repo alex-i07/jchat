@@ -1,0 +1,23 @@
+.navbar-laravel  {
+  min-height:4rem;
+  background-color:#563d7c;
+  box-shadow:0 0.5rem 1rem rgba(0,0,0,.05),inset 0 -1px 0 rgba(0,0,0,.1);
+
+  .navbar-brand {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .nav-link:hover, .nav-link:focus {
+    color: #fff !important;
+  }
+
+  .custom-dropdown, .custom-dropdown {
+    text-decoration:none;
+  }
+
+  .custom-dropdown:hover,.custom-dropdown:focus {
+    color: #c25fe2;
+    background-color: #fff;
+  }
+}

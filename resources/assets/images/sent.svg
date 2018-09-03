@@ -1,0 +1,24 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_3" fill="#00ff7f" d="m3.61512,13.926511c-1.062276,0.514606 -1.018178,1.268397 0.096036,1.677909l3.296582,1.205883c1.114213,0.406796 2.798763,0.184824 3.744424,-0.498299l14.319162,-10.439825c0.941742,-0.685841 1.042679,-0.584369 0.224411,0.225594l-11.320489,11.20177c-0.820226,0.808151 -0.578176,1.797501 0.538978,2.197046l0.386105,0.139526c1.117153,0.398638 2.939878,1.070889 4.049192,1.487648l3.657207,1.378025c1.110292,0.416759 2.018715,0.762852 2.020676,0.769194c0.00098,0.006342 0.005878,0.025368 0.011759,0.02718s0.267529,-0.871571 0.582096,-1.939743l5.574007,-18.942626c0.314568,-1.069079 -0.295948,-1.522984 -1.357244,-1.008377l-25.822902,12.519094z"/>
+  <path id="svg_5" fill="#00ff7f" d="m11.360979,25.349434c-0.066999,0.198999 2.301001,-3.429001 2.301001,-3.429001c0.669001,-1.021999 0.290001,-2.240999 -0.842001,-2.702999l-2.581999,-1.058001c-1.132,-0.462999 -1.674,0.08 -1.205,1.212c0,0.000999 2.396,5.774 2.327999,5.978001z"/>
+  <path d="m13.122012,30.620077l5.75598,-6.533566"/>
+  <line transform="rotate(-3, 16, 27.3533)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_12" y2="24.086512" x2="18.877992" y1="30.620078" x1="13.122012" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+  <path d="m14.817616,24.809374l2.293113,-1.791494"/>
+  <line transform="rotate(-15, 15.9642, 23.9136)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_13" y2="23.01788" x2="17.110729" y1="24.809374" x1="14.817616" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+  <path d="m12.094545,28.320702l2.293113,-1.791492"/>
+  <line transform="rotate(-15, 13.2411, 27.425)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_15" y2="26.529208" x2="14.387658" y1="28.320702" x1="12.094545" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+  <path d="m1.513131,25.818874l5.75598,-6.533566"/>
+  <line transform="rotate(-3, 4.39112, 22.5521)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_16" y2="19.285309" x2="7.269111" y1="25.818874" x1="1.513131" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+  <path d="m3.208735,20.008169l2.293113,-1.791492"/>
+  <line transform="rotate(-15, 4.35529, 19.1124)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_17" y2="18.216676" x2="5.501848" y1="20.00817" x1="3.208735" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+  <path d="m0.485664,23.519499l2.293112,-1.791494"/>
+  <line transform="rotate(-15, 1.63222, 22.6238)" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_18" y2="21.728005" x2="2.778777" y1="23.519498" x1="0.485664" stroke-width="1.5" stroke="#00ff7f" fill="none"/>
+ </g>
+</svg>
