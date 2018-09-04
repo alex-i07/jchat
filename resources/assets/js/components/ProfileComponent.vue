@@ -2,7 +2,7 @@
 
     <div>
 
-        <a v-on:click="showProfile()" class="dropdown-item custom-dropdown" href="#">
+        <a v-on:click="showProfile()" class="dropdown-item custom-dropdown" href="javascript:void(0)">
             <i class="fas fa-user-circle"></i>
             <span>Profile</span>
         </a>
