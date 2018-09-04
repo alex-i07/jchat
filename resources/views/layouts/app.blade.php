@@ -16,7 +16,7 @@
     {{--<link href="https://fonts.googleapis.com/css?family=Comfortaa|PT+Sans+Caption&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese" rel="stylesheet">--}}
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
