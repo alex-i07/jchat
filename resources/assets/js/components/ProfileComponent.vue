@@ -41,7 +41,7 @@
             this.content.className='card';
 
             this.content.innerHTML = '<div class="card-body" style="display: flex;">' +
-                                        '<img src="http://jchat.local/storage/users-avatars/' + this.myself.avatar + '" ' + 'alt="Avatar" class="img-thumbnail">' +
+                                        '<img src="storage/users-avatars/' + this.myself.avatar + '" ' + 'alt="Avatar" class="img-thumbnail">' +
                                         '<div>' +
                                             '<div class="alert alert-info" role="alert">' +
                                                 '<span>name: ' + this.myself.name + '</span>' +
