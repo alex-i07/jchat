@@ -68,3 +68,13 @@ Be sure to fill in your database details in your `.env` file before running the 
 ```bash
 php artisan migrate
 ```
+
+#### Symbolic Link
+
+Run command:
+
+```bash
+php artisan storage:link
+```
+
+to create symbolic link between public and storage directories.
