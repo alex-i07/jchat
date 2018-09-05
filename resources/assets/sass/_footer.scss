@@ -24,6 +24,16 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+@media (min-width:576px){
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 550px;
+  }
+  .footer {
+    height: 550px;
+  }
+}
+
 p {
   text-align: left;
   margin-bottom: 0;
