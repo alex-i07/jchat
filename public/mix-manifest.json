@@ -1,4 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/images/line_vert.gif": "/images/line_vert.gif",
+    "/images/send.svg": "/images/send.svg",
+    "/images/sent.svg": "/images/sent.svg",
+    "/favicon.ico": "/favicon.ico"
 }

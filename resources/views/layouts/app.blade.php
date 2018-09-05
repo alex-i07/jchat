@@ -50,12 +50,6 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <profile-component self="{{ $user }}"></profile-component>
-                                    {{--<a class="dropdown-item custom-dropdown" href="#"--}}
-                                       {{--onclick="event.preventDefault();--}}
-                                                    {{--showProfile();">--}}
-                                        {{--<i class="fas fa-user-circle"></i>--}}
-                                        {{--<span>{{ __('Profile') }}</span>--}}
-                                    {{--</a>--}}
 
                                     <a class="dropdown-item custom-dropdown" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

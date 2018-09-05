@@ -75,6 +75,9 @@
                         <dd>
                             <a href="https://www.iconfinder.com" target="_blank">Iconfinder</a>
                         </dd>
+                        <dd>
+                            <a href="https://www.favicon.cc/" target="_blank">favicon.cc</a>
+                        </dd>
                     </dl>
 
                 </div>
