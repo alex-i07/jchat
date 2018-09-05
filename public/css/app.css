@@ -12019,11 +12019,11 @@ footer {
 @media (max-width: 768px) {
   body {
     /* Margin bottom by footer height */
-    margin-bottom: 550px;
+    margin-bottom: 500px;
   }
 
   .footer {
-    height: 550px;
+    height: 500px;
   }
 }
 
