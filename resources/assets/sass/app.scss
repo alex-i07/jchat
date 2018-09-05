@@ -1,6 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans&subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese');
 
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+
 // Variables
 @import 'variables';
 
@@ -11,11 +13,11 @@
 
 @import '~dropzone/dist/min/dropzone.min';
 
-@import '~@fortawesome/fontawesome-free/scss/fa-brands';
-@import '~@fortawesome/fontawesome-free/scss/fa-regular';
-@import '~@fortawesome/fontawesome-free/scss/fa-solid';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/v4-shims';
+//@import '~@fortawesome/fontawesome-free/scss/fa-brands';
+//@import '~@fortawesome/fontawesome-free/scss/fa-regular';
+//@import '~@fortawesome/fontawesome-free/scss/fa-solid';
+//@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+//@import '~@fortawesome/fontawesome-free/scss/v4-shims';
 
 //style applied to all pages
 @import 'general';
