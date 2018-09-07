@@ -99,7 +99,7 @@ class RegisterController extends Controller
 
         else
         {
-            $path = 'avatar-default.png';
+            $path = 'https://res.cloudinary.com/dafl2zkjj/image/upload/v1536336141/storage/users-avatars/avatar-default.png';
         }
 
 //        dd($request->input('avatar'), $path);
