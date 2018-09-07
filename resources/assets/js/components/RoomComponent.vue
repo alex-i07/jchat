@@ -5,7 +5,7 @@
         <ul class="list-group">
 
             <li v-for="(user, key, index) in users" class="wrap list-group-item">
-                <img :src="'storage/users-avatars/' +  user.avatar" alt="Avatar">
+                <img :src="user.avatar" alt="Avatar">
                 {{user.name}}
 
                 <time-ago-component :created="user.is_online"></time-ago-component>

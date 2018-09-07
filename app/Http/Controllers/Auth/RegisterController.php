@@ -58,7 +58,8 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'avatar' => 'mimes:jpg,jpeg,png,bmp,svg,gif|max:3072',
+//            'avatar' => 'mimes:jpg,jpeg,png,bmp,svg,gif|max:3072',
+            'avatar' => 'is_png',
         ]);
     }
 
@@ -91,12 +92,22 @@ class RegisterController extends Controller
 
         $this->validator($request->all())->validate();
 
-        $path = 'avatar-default.png';
-
-        if (optional($request->file('avatar'))->isValid() !== null)
+        if (null !== $request->input('avatar'))
         {
             $path = $this->storeFile($request);
         }
+
+        else
+        {
+            $path = 'avatar-default.png';
+        }
+
+//        dd($request->input('avatar'), $path);
+
+//        if (optional($request->file('avatar'))->isValid() !== null)
+//        {
+//            $path = $this->storeFile($request);
+//        }
 
         $data = array('name' => $request->input('name'), 'email' => $request->input('email'),
                       'password' => $request->input('password'), 'avatar' => $path);
@@ -140,7 +151,16 @@ class RegisterController extends Controller
 
     protected function storeFile (Request $request)
     {
-        $request->file('avatar')->store('public/users__avatars');
-        return $request->file('avatar')->hashName();
+//        $request->file('avatar')->store('public/users-avatars');
+//        return $request->file('avatar')->hashName();
+
+        \Cloudinary::config(array( "cloud_name" => env('CLOUD_NAME'),
+                                   "api_key" => env('API_KEY'),
+                                   "api_secret" => env('API_SECRET')
+        ));
+
+        $response = \Cloudinary\Uploader::upload($request->input('avatar'), array("folder" => "storage/users-avatars/"));
+
+        return $response['secure_url'];
     }
 }

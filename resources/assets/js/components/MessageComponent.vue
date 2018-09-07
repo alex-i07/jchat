@@ -2,7 +2,7 @@
 
     <div class="envelope" v-bind:class="this.messageData.direction">
         <div >
-            <img :src="'storage/users-avatars/' + this.messageData.avatar" alt="Avatar"
+            <img :src="this.messageData.avatar" alt="Avatar"
                  v-bind:class="this.messageData.img">
         </div>
 

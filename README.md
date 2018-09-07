@@ -61,6 +61,8 @@ PUSHER_APP_SECRET=xxxxxxxxxxxxxxxxxxxx
 PUSHER_APP_CLUSTER=
 ```
 
+Enable client events in App Settings page of Pusher dashboard.
+
 #### Database Migrations
 
 Be sure to fill in your database details in your `.env` file before running the migrations:
