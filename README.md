@@ -11,13 +11,13 @@ This is a chat app with basic application built with:
 Clone the project repository by running the command below if you use SSH
 
 ```bash
-git clone git@github.com:ammezie/laravel-chat.git
+git clone git@github.com:ximee/jchat.git
 ```
 
 If you use https, use this instead
 
 ```bash
-git clone https://github.com/ammezie/laravel-chat.git
+git clone https://github.com/ximee/jchat.git
 ```
 
 After cloning,run:
@@ -71,12 +71,12 @@ Be sure to fill in your database details in your `.env` file before running the 
 php artisan migrate
 ```
 
-#### Symbolic Link
+#### Image hosting
 
-Run command:
+Enter Cloudinary account details in Cloudinary options section in .env file:
 
-```bash
-php artisan storage:link
+```txt
+CLOUD_NAME=xxxxxxxxx
+API_KEY=xxxxxxxxxxxxxxx
+API_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
-
-to create symbolic link between public and storage directories.

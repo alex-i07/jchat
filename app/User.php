@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'pivot'
+        'password', 'remember_token', 'pivot', 'email', 'id', 'registered'
     ];
 
     public function messages()
