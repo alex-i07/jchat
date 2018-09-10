@@ -12,7 +12,7 @@
                     <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                     <div class="col-md-6">
-                        <input v-on:keyup.enter="register" id="name" type="text" class="form-control" v-bind:class="{'is-invalid': invalidName}" name="name" required autofocus>
+                        <input id="name" type="text" class="form-control" v-bind:class="{'is-invalid': invalidName}" name="name" required autofocus>
 
                         <span v-if="invalidName" class="invalid-feedback">
                                         <strong>{{ errors.name[0]}}</strong>
@@ -24,7 +24,7 @@
                     <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                     <div class="col-md-6">
-                        <input v-on:keyup.enter="register" id="email" type="email" class="form-control" v-bind:class="{'is-invalid': invalidEmail}" name="email" required>
+                        <input id="email" type="email" class="form-control" v-bind:class="{'is-invalid': invalidEmail}" name="email" required>
 
                         <span class="invalid-feedback">
                                         <strong v-if="invalidEmail">{{ errors.email[0] }}</strong>
@@ -36,7 +36,7 @@
                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
                     <div class="col-md-6">
-                        <input v-on:keyup.enter="register" id="password" type="password" class="form-control" v-bind:class="{'is-invalid': invalidPassword}" name="password" required>
+                        <input id="password" type="password" class="form-control" v-bind:class="{'is-invalid': invalidPassword}" name="password" required>
 
                         <span class="invalid-feedback">
                                         <strong v-if="invalidPassword">{{ errors.password[0] }}</strong>
@@ -49,7 +49,7 @@
                     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
 
                     <div class="col-md-6">
-                        <input v-on:keyup.enter="register" id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                     </div>
                 </div>
 
