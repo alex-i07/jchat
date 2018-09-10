@@ -6,6 +6,8 @@ This is a chat app with basic application built with:
 * [Laravel](https://laravel.com) - The PHP Framework For Web Artisans
 * [Vue.js](https://vuejs.org) - The Progressive JavaScript Framework
 
+You can check demo app at: https://radiant-brook-17694.herokuapp.com
+
 ## Getting Started
 
 Clone the project repository by running the command below if you use SSH

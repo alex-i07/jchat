@@ -145,7 +145,6 @@
 
             this.dropzone = new Dropzone("#dropzone", {
                 url: "register",
-//                autoQueue: false,
                 previewsContainer: ".dropzone-previews",
                 clickable: "#add",
                 paramName: "avatar",
@@ -153,8 +152,6 @@
                 uploadMultiple: false,
                 maxFiles: 2,
                 maxFilesize: 3,
-                resizeWidth: 300,
-                resizeHeight: 300,
                 dictFileTooBig: 'Only files less than 3 Mb are allowed',
                 previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  " +
                                 "<div class=\"dz-image\"><img data-dz-thumbnail /></div>\n  " +
@@ -168,8 +165,6 @@
                 init: function() {
                     let dzClosure = this;
 
-//                    let removeImageButton = document.querySelector("#remove");
-
                     this.on("addedfile", function(file) {
 
                         if (typeof this.files[1] !== 'undefined'){
@@ -178,10 +173,13 @@
                         }
                         document.querySelector(".dz-message").style.display = 'none';
 
-//                        removeImageButton.addEventListener("click", self.removeInfo);
                     });
 
                     this.on('thumbnail', function(file, dataURL) {
+
+                        //file here is original, not a thumbnail, but dataURL is a base64 code of a thumbnail
+
+                        console.log(file);
 
                         self.thumbnail = dataURL;
 
@@ -275,10 +273,6 @@
                 ;
 
             }
-        },
-
-        destroyed () {
-//            document.querySelector("#remove").removeEventListener('click', this.removeInfo);
         }
     }
 
