@@ -100,7 +100,7 @@ class MessageController extends Controller
             return response('Your are not allowed to read messages from this room!', 403);
         }
 
-        $perPage = 20;
+        $perPage = env('PER_PAGE');
 
         $total = Message::where('room_id', '=', $roomId)->count();
 

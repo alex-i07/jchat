@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Room;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -59,7 +60,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
 //            'avatar' => 'mimes:jpg,jpeg,png,bmp,svg,gif|max:3072',
-            'avatar' => 'is_png',
+            'avatar' => 'is_image',
         ]);
     }
 
@@ -77,6 +78,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'avatar' => $data['avatar'],
+            'registered' => $data['registered'],
         ]);
     }
 
@@ -99,18 +101,18 @@ class RegisterController extends Controller
 
         else
         {
-            $path = 'https://res.cloudinary.com/dafl2zkjj/image/upload/v1536336141/storage/users-avatars/avatar-default.png';
+            $path = env('DEFAULT_AVATAR');
         }
-
-//        dd($request->input('avatar'), $path);
 
 //        if (optional($request->file('avatar'))->isValid() !== null)
 //        {
 //            $path = $this->storeFile($request);
 //        }
 
+        $registerDate = Carbon::now()->timezone('Atlantic/Azores')->toAtomString();
+
         $data = array('name' => $request->input('name'), 'email' => $request->input('email'),
-                      'password' => $request->input('password'), 'avatar' => $path);
+                      'password' => $request->input('password'), 'avatar' => $path, 'registered' => $registerDate);
 
 //        $this->traitRegister($request);  //в трейт нужно передать Request $request, а не обычный массив!
 

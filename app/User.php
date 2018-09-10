@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_online', 'avatar',
+        'name', 'email', 'password', 'is_online', 'avatar', 'registered'
     ];
 
     public $timestamps = false;
@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'pivot', 'id', 'email', 'registered'
+        'password', 'remember_token', 'pivot'
     ];
 
     public function messages()

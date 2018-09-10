@@ -22,7 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->default('avatar-default.png');
             $table->string('is_online')->default('Offline');
             $table->rememberToken();
-            $table->timestampTz('registered')->useCurrent();
+//            $table->timestampTz('registered')->useCurrent();
+            //->useCurrent() does not work also with dateTimeTz
+            $table->string('registered');
         });
     }
 

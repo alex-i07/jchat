@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        Validator::extend('is_png',function($attribute, $value, $params, $validator) {
+        Validator::extend('is_image',function($attribute, $value, $params, $validator) {
             $explode = explode(',', $value);
 
             $allow = ['png', 'jpg', 'svg'];
@@ -32,8 +32,6 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 $explode[0]
             );
-
-//            dd($explode, $format);
 
             // check file format
             if (!in_array($format, $allow)) {
