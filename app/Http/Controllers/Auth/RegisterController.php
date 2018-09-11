@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RegisterController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -50,34 +51,34 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
 //            'avatar' => 'mimes:jpg,jpeg,png,bmp,svg,gif|max:3072',
-            'avatar' => 'is_image',
+            'avatar'   => 'is_image',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
 
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'avatar' => $data['avatar'],
+            'name'       => $data['name'],
+            'email'      => $data['email'],
+            'password'   => Hash::make($data['password']),
+            'avatar'     => $data['avatar'],
             'registered' => $data['registered'],
         ]);
     }
@@ -94,13 +95,9 @@ class RegisterController extends Controller
 
         $this->validator($request->all())->validate();
 
-        if (null !== $request->input('avatar'))
-        {
+        if (null !== $request->input('avatar')) {
             $path = $this->storeFile($request);
-        }
-
-        else
-        {
+        } else {
             $path = env('DEFAULT_AVATAR');
         }
 
@@ -111,8 +108,13 @@ class RegisterController extends Controller
 
         $registerDate = Carbon::now()->timezone('Atlantic/Azores')->toAtomString();
 
-        $data = array('name' => $request->input('name'), 'email' => $request->input('email'),
-                      'password' => $request->input('password'), 'avatar' => $path, 'registered' => $registerDate);
+        $data = array(
+            'name'       => $request->input('name'),
+            'email'      => $request->input('email'),
+            'password'   => $request->input('password'),
+            'avatar'     => $path,
+            'registered' => $registerDate
+        );
 
 //        $this->traitRegister($request);  //в трейт нужно передать Request $request, а не обычный массив!
 
@@ -128,8 +130,8 @@ class RegisterController extends Controller
     /**
      * The user has been registered.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
+     * @param  \Illuminate\Http\Request $request
+     * @param  mixed $user
      * @return mixed
      */
     protected function registered(Request $request, $user)
@@ -140,7 +142,7 @@ class RegisterController extends Controller
 
         LoginController::authenticated($request, $user);
 
-        return response ('Registration successful', 201);
+        return response('Registration successful', 201);
 
     }
 
@@ -151,17 +153,19 @@ class RegisterController extends Controller
      * @return string
      */
 
-    protected function storeFile (Request $request)
+    protected function storeFile(Request $request)
     {
 //        $request->file('avatar')->store('public/users-avatars');
 //        return $request->file('avatar')->hashName();
 
-        \Cloudinary::config(array( "cloud_name" => env('CLOUD_NAME'),
-                                   "api_key" => env('API_KEY'),
-                                   "api_secret" => env('API_SECRET')
+        \Cloudinary::config(array(
+            "cloud_name" => env('CLOUD_NAME'),
+            "api_key"    => env('API_KEY'),
+            "api_secret" => env('API_SECRET')
         ));
 
-        $response = \Cloudinary\Uploader::upload($request->input('avatar'), array("folder" => "storage/users-avatars/"));
+        $response = \Cloudinary\Uploader::upload($request->input('avatar'),
+            array("folder" => "storage/users-avatars/"));
 
         return $response['secure_url'];
     }

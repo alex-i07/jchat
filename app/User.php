@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
     /**
@@ -15,7 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_online', 'avatar', 'registered'
+        'name',
+        'email',
+        'password',
+        'is_online',
+        'avatar',
+        'registered'
     ];
 
     public $timestamps = false;
@@ -26,7 +32,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'pivot', 'email', 'id', 'registered'
+        'password',
+        'remember_token',
+        'pivot',
+        'email',
+        'id',
+        'registered'
     ];
 
     public function messages()

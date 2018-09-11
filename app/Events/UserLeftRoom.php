@@ -13,6 +13,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class UserLeftRoom implements ShouldBroadcast
 {
+
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $room;
@@ -58,12 +59,12 @@ class UserLeftRoom implements ShouldBroadcast
 
         $channels = [];
 
-        foreach ($this->room->users as $user)
-        {
+        foreach ($this->room->users as $user) {
 
             array_push($channels, new PrivateChannel('user.' . $user->id));
 
         }
+
         return $channels;
 
     }

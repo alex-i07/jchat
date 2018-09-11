@@ -17,7 +17,5 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = [
-        '/users/presence',
-    ];
+    protected $except = [];
 }

@@ -26,12 +26,14 @@ class PageController extends Controller
     public function index()
     {
 
-        $user = json_encode(['id' => auth()->user()->id,
-                             'name' => auth()->user()->name,
-                             'email' => auth()->user()->email,
-                             'is_online' => auth()->user()->is_online,
-                             'avatar' => auth()->user()->avatar,
-                             'registered' => auth()->user()->registered,]);
+        $user = json_encode([
+            'id'         => auth()->user()->id,
+            'name'       => auth()->user()->name,
+            'email'      => auth()->user()->email,
+            'is_online'  => auth()->user()->is_online,
+            'avatar'     => auth()->user()->avatar,
+            'registered' => auth()->user()->registered,
+        ]);
 
         $rooms = Room::with('users:name,is_online,avatar')
             ->whereIn('id', auth()->user()->rooms()->get()->pluck('id'))->select('id', 'name')

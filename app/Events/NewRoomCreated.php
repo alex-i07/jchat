@@ -11,6 +11,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class NewRoomCreated implements ShouldBroadcast
 {
+
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $room;
@@ -37,11 +38,11 @@ class NewRoomCreated implements ShouldBroadcast
         $channels = [];
 
         foreach ($this->room->users as $user) {
-            if ($user->name !== auth()->user()->name)
-            {
+            if ($user->name !== auth()->user()->name) {
                 array_push($channels, new PrivateChannel('user.' . $user->id));
             }
         }
+
         return $channels;
     }
 }

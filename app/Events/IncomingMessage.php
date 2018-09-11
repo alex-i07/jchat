@@ -8,8 +8,8 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class IncomingMessage implements ShouldBroadcast
-{
+class IncomingMessage implements ShouldBroadcast {
+
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $message;
@@ -37,8 +37,6 @@ class IncomingMessage implements ShouldBroadcast
 
     public function broadcastOn()
     {
-
         return new PresenceChannel($this->channel);
-
     }
 }

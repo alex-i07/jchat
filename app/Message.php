@@ -21,7 +21,7 @@ class Message extends Model
      * @var bool
      */
 
-	public $timestamps = false;
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

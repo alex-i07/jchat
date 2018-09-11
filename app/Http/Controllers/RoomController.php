@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -30,8 +31,7 @@ class RoomController extends Controller
     public static function addRoom(Request $request)
     {
 
-        if ( !empty($request->input('name')) && !empty($request->input('users')))
-        {
+        if ( !empty($request->input('name')) && !empty($request->input('users'))) {
 
             $users = User::whereIn('name', $request->input('users'))->whereRaw(' `is_online` <> "Offline"')->get();
 
@@ -47,10 +47,8 @@ class RoomController extends Controller
                 broadcast(new NewRoomCreated($room))->toOthers();
 
                 return $room;
-            }
-
-            else {
-                return response ("Don't know how to name this error, will name it later", 418);
+            } else {
+                return response("Don't know how to name this error, will name it later", 418);
             }
         }
 
@@ -68,9 +66,8 @@ class RoomController extends Controller
     public function closeRoom($roomId)
     {
 
-        if($roomId == 1)
-        {
-            return response ('Your can\'t delete yourself from the first room!', 400);
+        if ($roomId == 1) {
+            return response('Your can\'t delete yourself from the first room!', 400);
         }
 
         $room = Room::find($roomId);
@@ -81,12 +78,11 @@ class RoomController extends Controller
         send info through web sockets
         */
 
-        if ($room->users()->get()->isNotEmpty())
-        {
+        if ($room->users()->get()->isNotEmpty()) {
             broadcast(new UserLeftRoom($room, auth()->user()->name))->toOthers();
         }
 
-        return response ('Your was successfully deleted from this room', 200);
+        return response('Your was successfully deleted from this room', 200);
 
     }
 }

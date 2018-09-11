@@ -39,7 +39,7 @@ class MessageController extends Controller
 
         $this->validate(request(), [
             'roomName' => 'required|string',
-            'body' => 'required'
+            'body'     => 'required'
         ]);
 
         $allowedRoom = auth()->user()->rooms->pluck('id', 'name');
@@ -60,17 +60,20 @@ class MessageController extends Controller
 
         $arrived_at = Carbon::now()->timezone('Atlantic/Azores')->format('Y-m-d\TH:i:s.uP');
 
-        if ($roomId)
-        {
+        if ($roomId) {
             Message::create([
-                'user_id' => $userId,
-                'room_id' => $roomId,
-                'body'    => $body,
+                'user_id'    => $userId,
+                'room_id'    => $roomId,
+                'body'       => $body,
                 'arrived_at' => $arrived_at,
             ]);
 
-            $messageToSend = ['body' => $body, 'arrived_at' => $arrived_at, 'user' =>
-                ['name' => $name, 'avatar' => $avatar, 'is_online' => $is_online]];
+            $messageToSend = [
+                'body'       => $body,
+                'arrived_at' => $arrived_at,
+                'user'       =>
+                    ['name' => $name, 'avatar' => $avatar, 'is_online' => $is_online]
+            ];
 
             return event(
                 (new IncomingMessage($messageToSend, $roomId))->dontBroadcastToCurrentUser()
@@ -95,8 +98,7 @@ class MessageController extends Controller
 
         $allowedRoom = auth()->user()->rooms->pluck('name', 'id')->get($roomId);
 
-        if (!$allowedRoom)
-        {
+        if ( !$allowedRoom) {
             return response('Your are not allowed to read messages from this room!', 403);
         }
 
@@ -104,14 +106,15 @@ class MessageController extends Controller
 
         $total = Message::where('room_id', '=', $roomId)->count();
 
-        if($page > ceil($total/$perPage))
-        {
-            return response ('', 204);    //204 No Content
+        if ($page > ceil($total / $perPage)) {
+            return response('', 204);    //204 No Content
         }
 
         $roomMessagesUser = Message::with('user:id,name,avatar,is_online')->select('body', 'arrived_at',
-            'user_id', 'room_id')->where('room_id', '=', $roomId)->latest('arrived_at')->skip(($page-1)*$perPage)
-            ->take($perPage)->get()->transform(function($value) {return collect($value)->except(['room_id', 'user_id', 'user.id']);});
+            'user_id', 'room_id')->where('room_id', '=', $roomId)->latest('arrived_at')->skip(($page - 1) * $perPage)
+            ->take($perPage)->get()->transform(function ($value) {
+                return collect($value)->except(['room_id', 'user_id', 'user.id']);
+            });
 
         $roomMessagesUser = new PrettyPaginator ($roomMessagesUser, $total, $perPage, $page, $roomId);
 

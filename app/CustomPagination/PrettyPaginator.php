@@ -6,7 +6,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class PrettyPaginator extends LengthAwarePaginator
 {
-
     public $roomId;
 
     /**
@@ -22,11 +21,9 @@ class PrettyPaginator extends LengthAwarePaginator
 
     public function __construct($items, $total, $perPage, $currentPage = null, $roomId)
     {
-
         $this->roomId = $roomId;
 
         parent::__construct($items, $total, $perPage, $currentPage);
-
     }
 
     /**
@@ -37,7 +34,6 @@ class PrettyPaginator extends LengthAwarePaginator
      */
     public function url($page)
     {
-
         if ($page <= 0) {
             $page = 1;
         }
